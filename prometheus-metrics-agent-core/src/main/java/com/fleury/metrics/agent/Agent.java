@@ -1,12 +1,13 @@
 package com.fleury.metrics.agent;
 
-import static com.fleury.metrics.agent.config.LoggerUtil.initializeLogging;
-
 import com.fleury.metrics.agent.config.ArgParser;
 import com.fleury.metrics.agent.config.Configuration;
 import com.fleury.metrics.agent.reporter.PrometheusMetricSystemFactory;
 import com.fleury.metrics.agent.transformer.AnnotatedMetricClassTransformer;
+
 import java.lang.instrument.Instrumentation;
+
+import static com.fleury.metrics.agent.config.LoggerUtil.initializeLogging;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.lang.instrument.Instrumentation;
  */
 public class Agent {
 
-    public static void premain(String args, Instrumentation instrumentation) {
+    public static void premain(String args, Instrumentation instrumentation) throws InterruptedException {
 
         ArgParser argParser = new ArgParser(args);
 

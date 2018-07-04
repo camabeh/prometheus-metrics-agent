@@ -28,6 +28,7 @@
     <modules>
         <module>prometheus-metrics-agent-annotation</module>
         <module>prometheus-metrics-agent-core</module>
+        <module>example-app</module>
     </modules>
 
     <dependencies>

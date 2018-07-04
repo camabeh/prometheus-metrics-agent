@@ -1,0 +1,54 @@
+# As Dropwizard resources are Jersey Resources running on Jetty, we simply need to instrument the same as Jersey.
+# Tested on Dropwizard 1.x but should work with any Jersey 2.x release
+
+#imports:
+#  - com/fleury/resources/HelloWorldResource
+#  - org/glassfish/jersey/server/ContainerRequest
+#  - org/glassfish/jersey/server/ContainerResponse
+#  - org/glassfish/jersey/message/internal/OutboundJaxrsResponse
+#  - org/glassfish/jersey/internal/util/collection/Value
+#  - org/glassfish/jersey/servlet/ServletContainer
+#  - javax/servlet/http/HttpServletRequest
+#  - javax/servlet/http/HttpServletResponse
+#  - java/util/Optional
+#  - java/lang/Object
+#  - java/lang/String
+#  - java/net/URI
+#
+#
+#
+#metrics:
+#
+#  ServletContainer.service(LURI;LURI;LHttpServletRequest;LHttpServletResponse;)LValue;:
+#    - type: Timed
+#      name: resource_latency
+#      doc: Measuring http resource latencies
+#      labels: ['path:$1.path', 'method:$2.method']
+#
+#    - type: Gauged
+#      name: in_flight_requests
+#      mode: in_flight
+#      doc: Measuring in flight requests
+#      labels: ['path:$1.path', 'method:$2.method']
+#
+#  ContainerResponse.<init>(LContainerRequest;LOutboundJaxrsResponse;)V:
+#    - type: Counted
+#      name: http_call_count
+#      doc: Http methods call counts
+#      labels: ['path:$0.requestUri.path', 'method:$0.method', 'status:$1.status']
+
+imports:
+  - com/camabeh/service/UserService
+
+metrics:
+  UserService.getUsers()Ljava/util/List;:
+    - type: Counted
+      name: countGetUsers
+      doc: total inokations of getUsers
+
+
+system:
+  jvm:
+  - gc
+  - memory
+  - threads

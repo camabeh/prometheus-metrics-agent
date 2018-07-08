@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/example-app/example-app.iml" filepath="$PROJECT_DIR$/example-app/example-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/prometheus-metrics-agent.iml" filepath="$PROJECT_DIR$/.idea/prometheus-metrics-agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/prometheus-metrics-agent-annotation/prometheus-metrics-agent-annotation.iml" filepath="$PROJECT_DIR$/prometheus-metrics-agent-annotation/prometheus-metrics-agent-annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/prometheus-metrics-agent-core/prometheus-metrics-agent-core.iml" filepath="$PROJECT_DIR$/prometheus-metrics-agent-core/prometheus-metrics-agent-core.iml" />
+    </modules>
+  </component>
+</project>
